@@ -1,0 +1,7 @@
+<h1>{{ news.title }}</h1>
+
+<h5>Published: {{ news.date_modified }}</h5>
+
+<h5>Link: <a href="{{ news.link }}" title="{{ news.title }}">{{ news.link }}</a></h5>
+
+<div class="content">{{ news.content|safe }}</div>

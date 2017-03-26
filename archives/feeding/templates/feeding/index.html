@@ -1,0 +1,9 @@
+{% if latest_news_list %}
+    <ul>
+    {% for news in latest_news_list %}
+        <li><a href="{% url 'feeding:detail' news.id %}">{{ news.title }}</a> </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No feeding are available.</p>
+{% endif %}

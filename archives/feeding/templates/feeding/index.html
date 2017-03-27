@@ -7,3 +7,20 @@
 {% else %}
     <p>No feeding are available.</p>
 {% endif %}
+
+{% if is_paginated %}
+    <hr>
+    <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+            <a href="./?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for i in paginator.page_range %}
+            <a href="./?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <a href="./?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+
+    </ul>
+{% endif %}
